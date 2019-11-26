@@ -22,17 +22,21 @@ printf( "A float: %s (%g)\n", yytext,
 atof( yytext ) );
 }
 
- if|else|return	       {
+if|else|return	       {
 printf( "A keyword: %s\n", yytext );
 }
-"long"*"unsigned"* int|double|long|char	       {
+int|double|long|char	       {
 printf( "A type: %s\n", yytext );
 }
 
 
+"{"              printf( "Start of statement body: %s\n", yytext );
+"}"              printf( "End of statement body: %s\n", yytext );
+
 {ID}              printf( "An identifier: %s\n", yytext );
 
-"+"|"-"|"*"|"/"   printf( "An operator: %s\n", yytext );
+
+"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"   printf( "An operator: %s\n", yytext );
 
 "{"[^}\n]*"}"     /* eat up one-line comments */
 
