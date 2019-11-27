@@ -29,13 +29,14 @@ int|char	       {
 printf( "A type: %s\n", yytext );
 }
 
-int|char|void&{ID}+&"("	printf("Function: %s\n", yytext );
 "#include"	printf("A import keyword: %s\n", yytext );
 {ID}*.h		 printf( "A library: %s\n", yytext );
 
 {ID}+		printf("Variable:   %s\n", yytext );
 
 
+"]"             printf( "End of range definition: %s\n", yytext );
+"["             printf( "Start of range definition: %s\n", yytext );
 "{"             printf( "Start of statement body: %s\n", yytext );
 "}"             printf( "End of statement body: %s\n", yytext );
 ";"		printf( "End of statement: %s\n", yytext );
@@ -47,8 +48,8 @@ int|char|void&{ID}+&"("	printf("Function: %s\n", yytext );
 
 
 
-"="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"   printf( "An operator: %s\n", yytext );
-
+"="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"|"!"|"\\"   printf( "An operator: %s\n", yytext );
+"\""	printf("String indicator: %s\n", yytext );
 
 
 
