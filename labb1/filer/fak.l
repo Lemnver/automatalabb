@@ -1,4 +1,4 @@
-/* scanner for a toy Pascal-like language */
+/* scanner for a toy C-like language */
 
 %option noyywrap
 
@@ -25,18 +25,19 @@ atof( yytext ) );
 if|else|return	       {
 printf( "A keyword: %s\n", yytext );
 }
-int|double|long|char	       {
+int|char	       {
 printf( "A type: %s\n", yytext );
 }
 
 
 "{"              printf( "Start of statement body: %s\n", yytext );
 "}"              printf( "End of statement body: %s\n", yytext );
+";"              printf( "End of statement: %s\n", yytext );
 
 {ID}              printf( "An identifier: %s\n", yytext );
 
 
-"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"   printf( "An operator: %s\n", yytext );
+"="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"   printf( "An operator: %s\n", yytext );
 
 "{"[^}\n]*"}"     /* eat up one-line comments */
 
