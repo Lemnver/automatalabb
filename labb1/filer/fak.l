@@ -39,7 +39,6 @@ printf( "A type: %s\n", yytext );
 
 "="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"   printf( "An operator: %s\n", yytext );
 
-"{"[^}\n]*"}"     /* eat up one-line comments */
 
 [ \t\n]+          /* eat up whitespace */
 
