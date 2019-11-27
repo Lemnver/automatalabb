@@ -29,18 +29,25 @@ int|char	       {
 printf( "A type: %s\n", yytext );
 }
 
+{ID}*.h		 printf( "A library: %s\n", yytext );
+
+
 
 "{"              printf( "Start of statement body: %s\n", yytext );
 "}"              printf( "End of statement body: %s\n", yytext );
 ";"              printf( "End of statement: %s\n", yytext );
+","		    printf("An seperator: %s\n", yytext );
+"("		    printf("Start of domain: %s\n", yytext );
+")"		    printf("End of domain: %s\n", yytext );
 
-{ID}              printf( "An identifier: %s\n", yytext );
+
+
 
 
 "="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"   printf( "An operator: %s\n", yytext );
 
 
-","		    printf("An seperator: %s\n", yytext );
+
 
 [ \t\n]+          /* eat up whitespace */
 
