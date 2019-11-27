@@ -22,23 +22,26 @@ printf( "A float: %s (%g)\n", yytext,
 atof( yytext ) );
 }
 
-if|else|return	       {
+if|else|return|exit	       {
 printf( "A keyword: %s\n", yytext );
 }
 int|char	       {
 printf( "A type: %s\n", yytext );
 }
 
+int|char|void&{ID}+&"("	printf("Function: %s\n", yytext );
+"#include"	printf("A import keyword: %s\n", yytext );
 {ID}*.h		 printf( "A library: %s\n", yytext );
 
+{ID}+		printf("Variable:   %s\n", yytext );
 
 
-"{"              printf( "Start of statement body: %s\n", yytext );
-"}"              printf( "End of statement body: %s\n", yytext );
-";"              printf( "End of statement: %s\n", yytext );
-","		    printf("An seperator: %s\n", yytext );
-"("		    printf("Start of domain: %s\n", yytext );
-")"		    printf("End of domain: %s\n", yytext );
+"{"             printf( "Start of statement body: %s\n", yytext );
+"}"             printf( "End of statement body: %s\n", yytext );
+";"		printf( "End of statement: %s\n", yytext );
+","		printf("An seperator: %s\n", yytext );
+"("		printf("Start of domain: %s\n", yytext );
+")"		printf("End of domain: %s\n", yytext );
 
 
 
