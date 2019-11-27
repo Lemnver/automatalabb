@@ -37,8 +37,10 @@ printf( "A type: %s\n", yytext );
 {ID}              printf( "An identifier: %s\n", yytext );
 
 
-"="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"   printf( "An operator: %s\n", yytext );
+"="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"|   printf( "An operator: %s\n", yytext );
 
+
+","		    printf("An seperator: %s\n", yytext );
 
 [ \t\n]+          /* eat up whitespace */
 
