@@ -19,9 +19,9 @@ ID       [a-z][a-z0-9]*
 printf( "An integer: %s (%d)\n", yytext,
 atoi( yytext ) );
 }
-{ID}+		printf("Variable:   %s\n", yytext );
+{ID}+			{	printf("Variable:   %s\n", yytext ); }
 
-if|else|return|exit	       { printf( "A keyword: %s\n", yytext );	}
+if|else|return|exit	 { printf( "A keyword: %s\n", yytext );	}
 
 int|char	       { printf( "A type: %s\n", yytext ); }
 
