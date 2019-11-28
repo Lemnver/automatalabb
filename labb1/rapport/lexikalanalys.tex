@@ -5,21 +5,28 @@ som \textit{fak.c} använder. Detta gjordes genom att titta på \textit{fak.c}.
 \\ \textit{pas.l} användes som en mall för att utveckla språket för specifikt \textit{fak.c} 
 
 \begin{figure}[!h]
-    \includegraphics[width=\linewidth,height=3cm]{bilder/fak.c.png}
+    \includegraphics[width=\linewidth,height=3cm]{bilder/fak_c.png}
     \captionof{figure}{fak.c koden}
-    \label{fig:fak.c}
+    \label{fig:fak_c}
 \end{figure}
 
-\\
+
 \begin{figure}[!h]
-    \includegraphics[width=\linewidth,height=3cm]{bilder/fak.c.png}
+    \includegraphics[width=\linewidth,height=3cm]{bilder/fak_l.png}
     \captionof{figure}{fak.l språket}
-    \label{fig:fak.c}
+    \label{fig:fak_l}
 \end{figure}
 
-\\
+
 \begin{description}
 
-\item[\textit{#include}] I Figure[\ref{fig:fak.}] är \textit{#includ} ett token för importering av biblotek. 
+\item[\textit{\#include}] I Figure[\ref{fig:fak_l}] är \textit{\#include} ett token för importering av biblotek. 
 
-\item[\textit{{ID}*.h} 
+\item[\textit{{ID}*.h} ] med det fördefinerade \textit{ID} på rad 16 i
+\ref{fig:fak_l}, som säger att alla ord som är konstruerade med \textit{ID} och slutar
+med \textit{.h}
+
+\item[\textit{{DIGIT}+] includerar alla heltal
+
+
+\end{description}
