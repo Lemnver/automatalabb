@@ -13,12 +13,13 @@ ID       [a-z][a-z0-9]*
 %%
 
 #include	printf("A import keyword: %s\n", yytext );
-{ID}*.h		 printf( "A library: %s\n", yytex
+{ID}*.h		 printf( "A library: %s\n", yytex);
 
 {DIGIT}+    {
 printf( "An integer: %s (%d)\n", yytext,
 atoi( yytext ) );
 }
+{ID}+		printf("Variable:   %s\n", yytext );
 
 if|else|return|exit	       {
 printf( "A keyword: %s\n", yytext );
@@ -27,18 +28,18 @@ int|char	       {
 printf( "A type: %s\n", yytext );
 }
 
-{ID}+		printf("Variable:   %s\n", yytext );
 
 
 "]"             printf( "End of range definition: %s\n", yytext );
 "["             printf( "Start of range definition: %s\n", yytext );
 "{"             printf( "Start of statement body: %s\n", yytext );
 "}"             printf( "End of statement body: %s\n", yytext );
-";"		printf( "End of statement: %s\n", yytext );
-","		printf("Seperator: %s\n", yytext );
 "("		printf("Start of domain: %s\n", yytext );
 ")"		printf("End of domain: %s\n", yytext );
 
+
+";"		printf( "End of statement: %s\n", yytext );
+","		printf("Seperator: %s\n", yytext );
 "="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"|"!"|"\\"   printf( "An operator: %s\n", yytext );
 "\""	printf("String indicator: %s\n", yytext );
 "\'"	printf("String indicator: %s\n", yytext );
