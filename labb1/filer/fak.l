@@ -45,6 +45,7 @@ printf( "A type: %s\n", yytext );
 
 "="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"|"!"|"\\"   printf( "An operator: %s\n", yytext );
 "\""	printf("String indicator: %s\n", yytext );
+"\'"	printf("String indicator: %s\n", yytext );
 
 
 
