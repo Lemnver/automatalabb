@@ -17,11 +17,6 @@ printf( "An integer: %s (%d)\n", yytext,
 atoi( yytext ) );
 }
 
-{DIGIT}+"."{DIGIT}*	      {
-printf( "A float: %s (%g)\n", yytext,
-atof( yytext ) );
-}
-
 if|else|return|exit	       {
 printf( "A keyword: %s\n", yytext );
 }
@@ -40,7 +35,7 @@ printf( "A type: %s\n", yytext );
 "{"             printf( "Start of statement body: %s\n", yytext );
 "}"             printf( "End of statement body: %s\n", yytext );
 ";"		printf( "End of statement: %s\n", yytext );
-","		printf("An seperator: %s\n", yytext );
+","		printf("Seperator: %s\n", yytext );
 "("		printf("Start of domain: %s\n", yytext );
 ")"		printf("End of domain: %s\n", yytext );
 
