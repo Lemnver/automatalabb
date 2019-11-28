@@ -29,7 +29,7 @@ int|char	       {
 printf( "A type: %s\n", yytext );
 }
 
-"#include"	printf("A import keyword: %s\n", yytext );
+#include	printf("A import keyword: %s\n", yytext );
 {ID}*.h		 printf( "A library: %s\n", yytext );
 
 {ID}+		printf("Variable:   %s\n", yytext );
