@@ -1,8 +1,8 @@
 \section{Lexikalanalys}
 
-Eftersom det skulle skapas ett språk för att skanna \texit{fak.c}, valdes att enbart det alfabet
-som \texit{fak.c} använder. Detta gjordes genom att titta på \texit{fak.c}.
-\\ \texit{pas.l} användes som en mall för att utveckla språket för specifikt \texit{fak.c} 
+Eftersom det skulle skapas ett språk för att skanna \textit{fak.c}, valdes att enbart det alfabet
+som \textit{fak.c} använder. Detta gjordes genom att titta på \textit{fak.c}.
+\\ \textit{pas.l} användes som en mall för att utveckla språket för specifikt \textit{fak.c} 
 
 \begin{figure}[!h]
     \includegraphics[width=\linewidth,height=3cm]{bilder/fak.c.png}
@@ -10,3 +10,16 @@ som \texit{fak.c} använder. Detta gjordes genom att titta på \texit{fak.c}.
     \label{fig:fak.c}
 \end{figure}
 
+\\
+\begin{figure}[!h]
+    \includegraphics[width=\linewidth,height=3cm]{bilder/fak.c.png}
+    \captionof{figure}{fak.l språket}
+    \label{fig:fak.c}
+\end{figure}
+
+\\
+\begin{description}
+
+\item[\textit{#include}] I Figure[\ref{fig:fak.}] är \textit{#includ} ett token för importering av biblotek. 
+
+\item[\textit{{ID}*.h} 
