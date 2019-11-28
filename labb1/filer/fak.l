@@ -12,14 +12,12 @@ ID       [a-z][a-z0-9]*
 
 %%
 
-#include	printf("A import keyword: %s\n", yytext );
-{ID}*.h		 printf( "A library: %s\n", yytex);
+#include	{printf("A import keyword: %s\n", yytext );}
+{ID}*.h		{ printf( "A library: %s\n", yytext); }
 
-{DIGIT}+    {
-printf( "An integer: %s (%d)\n", yytext,
-atoi( yytext ) );
-}
-{ID}+			{	printf("Variable:   %s\n", yytext ); }
+{DIGIT}+    {	printf( "An integer: %s (%d)\n", yytext, atoi( yytext ) ); }
+
+
 
 if|else|return|exit	 { printf( "A keyword: %s\n", yytext );	}
 
@@ -41,7 +39,7 @@ int|char	       { printf( "A type: %s\n", yytext ); }
 "\""	printf("String indicator: %s\n", yytext );
 "\'"	printf("String indicator: %s\n", yytext );
 \\t|\\n	    printf("Special string characters: %s\n", yytext);
-
+{ID}+			{	printf("Variable:   %s\n", yytext ); }
 [ \t\n]+          /* eat up whitespace */
 .                 printf( "Unrecognized character: %s\n", yytext );
 

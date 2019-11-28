@@ -366,11 +366,11 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[55] =
     {   0,
-        0,    0,   22,   20,   19,   19,   15,   16,   20,   17,
-       11,   12,   14,    3,   13,    8,   15,    7,    4,    4,
-        4,    4,    4,    9,   10,    2,   19,    0,    3,   18,
-        0,    4,    4,    2,    2,    4,    4,    4,    4,    4,
-        0,    4,    4,    4,    4,    4,    0,    4,    0,    4,
+        0,    0,   22,   20,   19,   19,   14,   15,   20,   16,
+       10,   11,   13,    3,   12,    7,   14,    6,   18,   18,
+       18,   18,   18,    8,    9,    2,   19,    0,    3,   17,
+        0,   18,   18,    2,    2,   18,   18,    4,   18,   18,
+        0,   18,   18,   18,    5,   18,    0,   18,    0,   18,
         0,    0,    1,    0
     } ;
 
@@ -783,117 +783,110 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 15 "fak.l"
-printf("A import keyword: %s\n", yytext );
+{printf("A import keyword: %s\n", yytext );}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 16 "fak.l"
-printf( "A library: %s\n", yytex);
+{ printf( "A library: %s\n", yytext); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 18 "fak.l"
-{
-printf( "An integer: %s (%d)\n", yytext,
-atoi( yytext ) );
-}
+{	printf( "An integer: %s (%d)\n", yytext, atoi( yytext ) ); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 22 "fak.l"
-printf("Variable:   %s\n", yytext );
+{ printf( "A keyword: %s\n", yytext );	}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 24 "fak.l"
-{
-printf( "A keyword: %s\n", yytext );
-}
+{ printf( "A type: %s\n", yytext ); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 27 "fak.l"
-{
-printf( "A type: %s\n", yytext );
-}
+#line 28 "fak.l"
+printf( "End of range definition: %s\n", yytext );
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 33 "fak.l"
-printf( "End of range definition: %s\n", yytext );
+#line 29 "fak.l"
+printf( "Start of range definition: %s\n", yytext );
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 34 "fak.l"
-printf( "Start of range definition: %s\n", yytext );
+#line 30 "fak.l"
+printf( "Start of statement body: %s\n", yytext );
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 35 "fak.l"
-printf( "Start of statement body: %s\n", yytext );
+#line 31 "fak.l"
+printf( "End of statement body: %s\n", yytext );
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 36 "fak.l"
-printf( "End of statement body: %s\n", yytext );
+#line 32 "fak.l"
+printf("Start of domain: %s\n", yytext );
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 37 "fak.l"
-printf("Start of domain: %s\n", yytext );
+#line 33 "fak.l"
+printf("End of domain: %s\n", yytext );
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 38 "fak.l"
-printf("End of domain: %s\n", yytext );
+#line 36 "fak.l"
+printf( "End of statement: %s\n", yytext );
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 41 "fak.l"
-printf( "End of statement: %s\n", yytext );
+#line 37 "fak.l"
+printf("Seperator: %s\n", yytext );
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 42 "fak.l"
-printf("Seperator: %s\n", yytext );
+#line 38 "fak.l"
+printf( "An operator: %s\n", yytext );
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 43 "fak.l"
-printf( "An operator: %s\n", yytext );
+#line 39 "fak.l"
+printf("String indicator: %s\n", yytext );
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 44 "fak.l"
+#line 40 "fak.l"
 printf("String indicator: %s\n", yytext );
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 45 "fak.l"
-printf("String indicator: %s\n", yytext );
+#line 41 "fak.l"
+printf("Special string characters: %s\n", yytext);
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 46 "fak.l"
-printf("Special string characters: %s\n", yytext);
+#line 42 "fak.l"
+{	printf("Variable:   %s\n", yytext ); }
 	YY_BREAK
 case 19:
 /* rule 19 can match eol */
 YY_RULE_SETUP
-#line 48 "fak.l"
+#line 43 "fak.l"
 /* eat up whitespace */
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 49 "fak.l"
+#line 44 "fak.l"
 printf( "Unrecognized character: %s\n", yytext );
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 51 "fak.l"
+#line 46 "fak.l"
 ECHO;
 	YY_BREAK
-#line 897 "aut.c"
+#line 890 "aut.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1898,7 +1891,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 51 "fak.l"
+#line 46 "fak.l"
 
 
 int main(int argc, char **argv) {
