@@ -21,12 +21,9 @@ atoi( yytext ) );
 }
 {ID}+		printf("Variable:   %s\n", yytext );
 
-if|else|return|exit	       {
-printf( "A keyword: %s\n", yytext );
-}
-int|char	       {
-printf( "A type: %s\n", yytext );
-}
+if|else|return|exit	       { printf( "A keyword: %s\n", yytext );	}
+
+int|char	       { printf( "A type: %s\n", yytext ); }
 
 
 
@@ -43,6 +40,7 @@ printf( "A type: %s\n", yytext );
 "="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"|"!"|"\\"   printf( "An operator: %s\n", yytext );
 "\""	printf("String indicator: %s\n", yytext );
 "\'"	printf("String indicator: %s\n", yytext );
+\\t|\\n	    printf("Special string characters: %s\n", yytext);
 
 [ \t\n]+          /* eat up whitespace */
 .                 printf( "Unrecognized character: %s\n", yytext );
