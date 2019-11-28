@@ -35,7 +35,18 @@ som existerar i programmerings språket c.
 
 \item[\textit{\\t|\\n}] en token för att känna igen speciella karaktärer i en sträng sekvens.
 
-\item[\texti{
+\item[\texti{rad 37-42}] tokens som beskriver start och slut på gruppsekvenser för dem
+operationer som använder sig av klammrar, måsvingar och paranteser.
+
+\item[\textit{rad 45-49}] beskriver tokens för diverse speciella karaktärer, deklarationer av
+tillstånd separerare, operatorer för olika operationer samt deklarationer för strängar och
+karaktärer.
+
+\item{\textit{{ID}+}r}] för att skapa tokens åt identifierare används ett reguljärt uttryck för alla strängar som
+består av enbart \textit{ID}.
+
+\item{\textit{rad 51-52}} för resterande text finns det uttryck som känner igen tomt utrymme och
+tecken som är inte inkluderat i språket.
 
 
 \end{description}
