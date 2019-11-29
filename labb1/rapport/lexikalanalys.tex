@@ -1,9 +1,9 @@
 \section{Lexikalanalys}
 
 Eftersom det skulle skapas ett språk för att skanna \textit{fak.c}, valdes att enbart det alfabet
-som \textit{fak.c} använder. Detta gjordes genom att titta på \textit{fak.c}.
+som \textit{fak.c} använder. Språket togs fram genom att först analysera \textit{fak.c}.
 \\ \textit{pas.l} användes som en mall för att utveckla språket för specifikt \textit{fak.c},
-därav de tokens som existerade men var ej nödvändiga för \textit{fak.c} togs bort, och de som
+därav de tokens som fanns men var ej nödvändiga för \textit{fak.c} togs bort, och de som
 behövdes laddes till. 
 
 \begin{figure}[!h]
@@ -37,18 +37,19 @@ som existerar i programmerings språket c.
 
 \item[\textit{\\t|\\n}] Token för att känna igen speciella karaktärer i en sträng sekvens.
 
-\item[\textit{rad 37-42}] Tokens som beskriver start och slut på gruppsekvenser för dem
+\item[\textit{rad 26-31}] Tokens som beskriver start och slut på gruppsekvenser för dem
 operationer som använder sig av klammrar, måsvingar och paranteser.
 
-\item[\textit{rad 45-49}] Beskriver tokens för diverse speciella karaktärer, deklarationer av
+\item[\textit{rad 34-49}] Beskriver tokens för diverse speciella karaktärer, deklarationer av
 tillstånd separerare, operatorer för olika operationer samt deklarationer för strängar och
 karaktärer.
 
 \item[\textit{{ID}+}] För att skapa tokens åt identifierare används ett reguljärt uttryck för alla strängar som
 består av enbart \textit{ID}.
 
-\item[\textit{rad 51-52}] För resterande text finns det uttryck som känner igen tomt utrymme och
+\item[\textit{rad 41-42}] För resterande text finns det uttryck som känner igen tomt utrymme och
 tecken som är inte inkluderat i språket.
 
-
 \end{description}
+
+\\ Tillsammans beskriver språket i filen \textit{fak\.c}
