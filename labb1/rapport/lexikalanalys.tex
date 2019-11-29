@@ -1,10 +1,10 @@
-\section{Lexikalanalys}
+\section{Lexikal analys}
 
 Eftersom det skulle skapas ett språk för att skanna \textit{fak.c}, valdes att enbart det alfabet
 som \textit{fak.c} använder. Språket togs fram genom att först analysera \textit{fak.c}.
 \\ \textit{pas.l} användes som en mall för att utveckla språket för specifikt \textit{fak.c},
 därav de tokens som fanns men var ej nödvändiga för \textit{fak.c} togs bort, och de som
-behövdes laddes till. 
+behövdes lades till. 
 
 \begin{center}
     \includegraphics[width=\linewidth]{bilder/fak_c.png}
@@ -12,37 +12,31 @@ behövdes laddes till.
     \label{fig:fak_c}
 \end{center}
 
-\begin{center}
-    \includegraphics[width=\linewidth]{bilder/fak_l.png}
-    \captionof{figure}{fak.l språket}
-    \label{fig:fak_l}
-\end{center}
-
 \newpage
 
 
 \begin{description}
 
-\item[\textit{\#include}] I \textit{fak.l} är \textit{\#include} ett token för importering av biblotek. 
+\item[\textit{\#include}] I \textit{fak.l} är \textit{\#include} ett token för import av bibliotek. 
 
-\item[\textit{{ID}*.h}] Med det fördefinerade \textit{ID} på rad 16 i
+\item[\textit{{ID}*.h}] Med det fördefinierade \textit{ID} på rad 16 i
 \textit{fak.l}, som säger att alla ord som är konstruerade med \textit{ID} och slutar
 med \textit{.h}
 
-\item[\textit{{DIGIT}+}] includerar alla heltal.
+\item[\textit{{DIGIT}+}] inkluderar alla heltal.
 
 \item[\textit{if|else|return|exit}] Alla nyckel ord som uppstår i \textit{fak.c }
 som existerar i programmerings språket c.
 
-\item[\textit{int|char}] Typdeklarationerna som uppstår i \textit{fak.c}. 
+\item[\textit{int|char}] Typ-deklarationerna som uppstår i \textit{fak.c}. 
 
 \item[\textbackslash t|\textbackslash n] Token för att känna igen speciella karaktärer i en sträng sekvens.
 
-\item[\textit{rad 26-31}] Tokens som beskriver start och slut på gruppsekvenser för dem
-operationer som använder sig av klammrar, måsvingar och paranteser.
+\item[\textit{rad 26-31}] Tokens som beskriver start och slut på grupp sekvenser för dem
+operationer som använder sig av klamrar, måsvingar och parenteser.
 
 \item[\textit{rad 34-49}] Beskriver tokens för diverse speciella karaktärer, deklarationer av
-tillstånd separerare, operatorer för olika operationer samt deklarationer för strängar och
+tillstånd som separerar, operatorer för olika operationer samt deklarationer för strängar och
 karaktärer.
 
 \item[\textit{{ID}+}] För att skapa tokens åt identifierare används ett reguljärt uttryck för alla strängar som
