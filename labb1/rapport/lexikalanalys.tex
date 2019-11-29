@@ -2,36 +2,38 @@
 
 Eftersom det skulle skapas ett språk för att skanna \textit{fak.c}, valdes att enbart det alfabet
 som \textit{fak.c} använder. Detta gjordes genom att titta på \textit{fak.c}.
-\\ \textit{pas.l} användes som en mall för att utveckla språket för specifikt \textit{fak.c} 
+\\ \textit{pas.l} användes som en mall för att utveckla språket för specifikt \textit{fak.c},
+därav de tokens som existerade men var ej nödvändiga för \textit{fak.c} togs bort, och de som
+behövdes laddes till. 
 
 \begin{figure}[!h]
     \includegraphics[width=\linewidth,height=3cm]{bilder/fak_c.png}
     \captionof{figure}{fak.c koden}
-    \label{fig:fak_c}
+    \label{fig:fak c}
 \end{figure}
 
 
 \begin{figure}[!h]
     \includegraphics[width=\linewidth,height=3cm]{bilder/fak_l.png}
     \captionof{figure}{fak.l språket}
-    \label{fig:fak_l}
+    \label{fig:fak l}
 \end{figure}
 
 
 \begin{description}
 
-\item[\textit{\#include}] I Figure[\ref{fig:fak_l}] är \textit{\#include} ett token för importering av biblotek. 
+\item[\textit{\#include}] I Figure[\ref{fig:fak l}] är \textit{\#include} ett token för importering av biblotek. 
 
 \item[\textit{{ID}*.h} ] med det fördefinerade \textit{ID} på rad 16 i
-\ref{fig:fak_l}, som säger att alla ord som är konstruerade med \textit{ID} och slutar
+\ref{fig:fak l}, som säger att alla ord som är konstruerade med \textit{ID} och slutar
 med \textit{.h}
 
 \item[\textit{{DIGIT}+]} includerar alla heltal.
 
-\item[\textit{if|else|return|exit}] är alla nyckel ord som uppstår i \textit{fak.c [\ref{fak_c}] }
+\item[\textit{if|else|return|exit}] är alla nyckel ord som uppstår i \textit{fak.c [\ref{fak c}] }
 som existerar i programmerings språket c.
 
-\item[\textit{int|char}] är typdeklarationerna som uppstår i \textit{fak.c [\ref{fak_c}]}. 
+\item[\textit{int|char}] är typdeklarationerna som uppstår i \textit{fak.c [\ref{fak c}]}. 
 
 \item[\textit{\\t|\\n}] en token för att känna igen speciella karaktärer i en sträng sekvens.
 
