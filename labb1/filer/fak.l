@@ -1,7 +1,5 @@
 /* scanner for a toy C-like language */
-
 %option noyywrap
-
 %{
 /* need this for the call to atof() below */
 #include <math.h>
@@ -37,9 +35,9 @@ int|char	       { printf( "A type: %s\n", yytext ); }
 ","		printf("Seperator: %s\n", yytext );
 "="|"+"|"-"|"*"|"/"|"%"|"&"|">"|"<"|"?"|"!"|"\\"   printf( "An operator: %s\n", yytext );
 "\""	printf("String indicator: %s\n", yytext );
-"\'"	printf("String indicator: %s\n", yytext );
+"\'"	printf("Char indicator: %s\n", yytext );
 \\t|\\n	    printf("Special string characters: %s\n", yytext);
-{ID}+			{	printf("Variable:   %s\n", yytext ); }
+{ID}+			{	printf("Identifier:   %s\n", yytext ); }
 [ \t\n]+          /* eat up whitespace */
 .                 printf( "Unrecognized character: %s\n", yytext );
 
